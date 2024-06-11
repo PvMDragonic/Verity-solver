@@ -1,0 +1,9 @@
+{
+  "short_name": "Verity Solver",
+  "name": "Salvation's Edge's Verity encounter solver",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
