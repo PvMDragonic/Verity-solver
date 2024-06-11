@@ -1,0 +1,60 @@
+@import '../utilities/colors.scss';
+
+.home
+{
+    // Was giving scrollbars at 100 and I cba.
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text
+    {
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 1rem;
+        margin: 0;
+
+        &:not(:first-of-type) 
+        {
+            padding-top: 1rem;
+        }
+    }
+
+    &__container
+    {
+        width: 50%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: $color_light_gray;
+        box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem $color_gray;
+        border: 0.1rem solid $color_gray;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    &__symbols
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__result
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & p
+        {
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+}

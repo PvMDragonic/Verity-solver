@@ -1,0 +1,44 @@
+@import '../utilities/colors.scss';
+
+.symbols
+{
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $color_medium_gray;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+
+    &__container
+    {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    &__text
+    {
+        font-size: 1.25rem;
+        text-align: center;
+        height: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__button
+    {
+        width: 2rem;
+        height: 2rem;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+}
