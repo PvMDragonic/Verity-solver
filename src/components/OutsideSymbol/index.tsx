@@ -1,4 +1,10 @@
 import React from "react";
+import Cone from "../../assets/Cone";
+import Prism from "../../assets/Prism";
+import Cylinder from "../../assets/Cylinder";
+import Cube from "../../assets/Cube";
+import Tetrahedron from "../../assets/Tetrahedron";
+import Sphere from "../../assets/Sphere";
 
 interface ISymbol
 {
@@ -31,7 +37,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('TC')}
                 >
-                    A
+                    <Cone/>
                 </button>
                 <button 
                     title = 'Prism'
@@ -39,7 +45,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('TS')}
                 >
-                    B
+                    <Prism/>
                 </button>
                 <button 
                     title = 'Cylinder'
@@ -47,7 +53,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('SC')}
                 >
-                    C
+                    <Cylinder/>
                 </button>
             </div>
             <div className = 'symbols__container'>
@@ -57,7 +63,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('SS')}
                 >
-                    D
+                    <Cube/>
                 </button>
                 <button 
                     title = 'Tetrahedron'
@@ -65,7 +71,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('TT')}
                 >
-                    E
+                    <Tetrahedron/>
                 </button>
                 <button
                     title = 'Sphere' 
@@ -73,7 +79,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('CC')}
                 >
-                    F
+                    <Sphere/>
                 </button>
             </div>
         </div>

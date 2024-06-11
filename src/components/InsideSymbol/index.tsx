@@ -1,4 +1,7 @@
 import React from "react";
+import Square from "../../assets/Square";
+import Triangle from "../../assets/Triangle";
+import Circle from "../../assets/Circle";
 
 interface ISymbol
 {
@@ -31,7 +34,7 @@ export function InsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('S')}
                 >
-                    □
+                    <Square/>
                 </button>
                 <button 
                     title = 'Triangle'
@@ -39,7 +42,7 @@ export function InsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('T')}
                 >
-                    △
+                    <Triangle/>
                 </button>
                 <button 
                     title = 'Circle'
@@ -47,7 +50,7 @@ export function InsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                     className = 'symbols__button'
                     onClick = {() => updateSymbol('C')}
                 >
-                    ○
+                    <Circle/>
                 </button>
             </div>
         </div>
