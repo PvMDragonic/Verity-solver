@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { InsideSymbol } from "../../components/InsideSymbol";
 import { OutsideSymbol } from "../../components/OutsideSymbol";
+import { PuzzleSolver } from "./solver";
 import '../../scss/main.scss';
 
 export function Home()
@@ -8,6 +9,7 @@ export function Home()
     const [insideSymbols, setInsideSymbols] = useState<string[]>(['', '', '']);
     const [outsideSymbols, setOutsideSymbols] = useState<string[]>(['', '', '']);
     const [selectWarning, setSelectWarning] = useState<boolean>(true);
+    const [instructions, setInstructions] = useState<string[][]>([]);
     
     useEffect(() => {
         setSelectWarning(
@@ -19,7 +21,9 @@ export function Home()
     useEffect(() => {
         if (selectWarning) return;
 
-        // TO-DO 
+        setInstructions(
+            PuzzleSolver(insideSymbols, outsideSymbols)
+        );
     }, [selectWarning]);
 
     return (
@@ -72,7 +76,13 @@ export function Home()
                     {selectWarning ? (
                         <p>Please select all symbols.</p>
                     ) : (
-                        <p>Soon</p>
+                        <>
+                            {instructions.map((step, index) => (
+                                <p key = {index}>
+                                    {index + 1}. Dissect <b>{step[0]}</b> on <b>{step[1]}.</b>
+                                </p>
+                            ))}
+                        </>
                     )}
                 </div>
             </section>
