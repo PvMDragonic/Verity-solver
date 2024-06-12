@@ -1,3 +1,7 @@
+import Prism from "../../assets/Prism";
+import Cylinder from "../../assets/Cylinder";
+import Cone from "../../assets/Cone";
+
 const requiredCompound: { [key: string]: string } = 
 {
     C: 'ST', // A statue with a circle should have a prism (ST);
@@ -19,7 +23,23 @@ const simpleSymbolsNames: { [key: string]: string } =
     T: '△'
 }
 
-export function PuzzleSolver(inside: string[], outside: string[])
+const compoundIcon: { [key: string]: React.FC } =
+{
+    ST: Prism,
+    TS: Prism,
+    SC: Cylinder,
+    CS: Cylinder,
+    TC: Cone,
+    CT: Cone
+};
+
+interface IPuzzleSolver
+{
+    finalSymbols: React.FC[];
+    instructions: string[][];
+}
+
+export function PuzzleSolver(inside: string[], outside: string[]): IPuzzleSolver
 {
     // The params are React useStates that can't be directly changed.
     const simpleSymbols = [...inside];
@@ -65,5 +85,8 @@ export function PuzzleSolver(inside: string[], outside: string[])
         }
     }
 
-    return swaps;
+    return {
+        finalSymbols: compoundSymbols.map(symbol => compoundIcon[symbol]), 
+        instructions: swaps
+    };
 }

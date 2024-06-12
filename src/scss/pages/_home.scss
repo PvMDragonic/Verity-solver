@@ -22,6 +22,12 @@
         {
             padding-top: 1rem;
         }
+
+        // Removes padding from 'Solution'.
+        &:last-of-type
+        {
+            padding-bottom: 0;
+        }
     }
 
     &__container
@@ -88,7 +94,7 @@
         }
     }
 
-    &__result
+    &__results
     {
         width: 100%;
         height: 100%;

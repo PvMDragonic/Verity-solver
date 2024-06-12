@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { InsideSymbol } from "../../components/InsideSymbol";
 import { OutsideSymbol } from "../../components/OutsideSymbol";
 import { PuzzleSolver } from "./solver";
+import { Results } from "../../components/Results";
 import '../../scss/main.scss';
 
 export function Home()
@@ -9,14 +10,17 @@ export function Home()
     const [insideSymbols, setInsideSymbols] = useState<string[]>(['', '', '']);
     const [outsideSymbols, setOutsideSymbols] = useState<string[]>(['', '', '']);
     const [instructions, setInstructions] = useState<string[][]>([]);
+    const [finalSymbols, setFinalSymbols] = useState<React.FC[]>([]);
     
     useEffect(() => {
         if (insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '')) 
             return;
 
-        setInstructions(
-            PuzzleSolver(insideSymbols, outsideSymbols)
-        );
+        const { finalSymbols, instructions } = PuzzleSolver(insideSymbols, outsideSymbols);
+
+        setInstructions(instructions);
+        setFinalSymbols(finalSymbols);
+
     }, [insideSymbols, outsideSymbols]);
 
     return (
@@ -71,17 +75,14 @@ export function Home()
                     </div>
                 </div>
                 <p className = 'home__text'>Solution</p>
-                <div className = 'home__result'>
+                <div className = 'home__results'>
                     {insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '') ? (
                         <p>Please select all symbols.</p>
                     ) : (
-                        <>
-                            {instructions.map((step, index) => (
-                                <p key = {index}>
-                                    {index + 1}. Dissect <b>{step[0]}</b> on <b>{step[1]}.</b>
-                                </p>
-                            ))}
-                        </>
+                        <Results
+                            finalSymbols = {finalSymbols}
+                            instructions = {instructions}
+                        />
                     )}
                 </div>
             </section>
