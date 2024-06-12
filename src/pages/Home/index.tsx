@@ -24,7 +24,7 @@ export function Home()
         setInstructions(
             PuzzleSolver(insideSymbols, outsideSymbols)
         );
-    }, [selectWarning]);
+    }, [selectWarning, insideSymbols, outsideSymbols]);
 
     return (
         <div className = 'home'>
