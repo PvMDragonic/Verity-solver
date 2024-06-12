@@ -1,6 +1,7 @@
 {
   "name": "verity-solver",
   "version": "1.0.0",
+  "homepage": "https://pvmdragonic.github.io/Verity-solver/",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
