@@ -8,23 +8,16 @@ export function Home()
 {
     const [insideSymbols, setInsideSymbols] = useState<string[]>(['', '', '']);
     const [outsideSymbols, setOutsideSymbols] = useState<string[]>(['', '', '']);
-    const [selectWarning, setSelectWarning] = useState<boolean>(true);
     const [instructions, setInstructions] = useState<string[][]>([]);
     
     useEffect(() => {
-        setSelectWarning(
-            insideSymbols.some(str => str === '') || 
-            outsideSymbols.some(str => str === '')
-        );
-    }, [insideSymbols, outsideSymbols]);
-    
-    useEffect(() => {
-        if (selectWarning) return;
+        if (insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '')) 
+            return;
 
         setInstructions(
             PuzzleSolver(insideSymbols, outsideSymbols)
         );
-    }, [selectWarning, insideSymbols, outsideSymbols]);
+    }, [insideSymbols, outsideSymbols]);
 
     return (
         <div className = 'home'>
@@ -73,7 +66,7 @@ export function Home()
                 </div>
                 <p className = 'home__text'>Solution</p>
                 <div className = 'home__result'>
-                    {selectWarning ? (
+                    {insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '') ? (
                         <p>Please select all symbols.</p>
                     ) : (
                         <>
