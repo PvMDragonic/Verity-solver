@@ -5,8 +5,8 @@ import Cone from "../../assets/Cone";
 const requiredCompound: { [key: string]: string } = 
 {
     C: 'ST', // A statue with a circle should have a prism (ST);
-    S: 'TC', // A statue with a square should have a cylinder (TC);
-    T: 'SC'  // A statue with a triangle should have a cone (SC).
+    S: 'TC', // A statue with a square should have a cone (TC);
+    T: 'SC'  // A statue with a triangle should have a cylinder (SC).
 };
 
 const statuePositions: { [key: number]: string } = 
