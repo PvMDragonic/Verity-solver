@@ -91,7 +91,7 @@ export function Home()
                     </div>
                 )}
             </section>
-            <p className = 'home__credits'>Made by Dragonic#2329</p>
+            <p className = 'home__credits'>Made by Dragonic#2329 — View project on <a href='https://github.com/PvMDragonic/Verity-solver'>Github</a>.</p>
         </div>
     )
 }
