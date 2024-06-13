@@ -75,17 +75,23 @@ export function Home()
                     </div>
                 </div>
                 <p className = 'home__text'>Solution</p>
-                <div className = 'home__results'>
-                    {insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '') ? (
+                {insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '') ? (
+                    <div 
+                        className = 'home__results'
+                        style = {{ height: '100%' }}
+                    >
                         <p>Please select all symbols.</p>
-                    ) : (
+                    </div>
+                ) : (
+                    <div className = 'home__results'>
                         <Results
                             finalSymbols = {finalSymbols}
                             instructions = {instructions}
                         />
-                    )}
-                </div>
+                    </div>
+                )}
             </section>
+            <p className = 'home__credits'>Made by Dragonic#2329</p>
         </div>
     )
 }
