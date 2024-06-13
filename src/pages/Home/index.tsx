@@ -11,15 +11,28 @@ export function Home()
     const [outsideSymbols, setOutsideSymbols] = useState<string[]>(['', '', '']);
     const [instructions, setInstructions] = useState<string[][]>([]);
     const [finalSymbols, setFinalSymbols] = useState<React.FC[]>([]);
+    const [resultMessage, setResultMessage] = useState<string>('');
     
-    useEffect(() => {
-        if (insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '')) 
+    useEffect(() => 
+    {
+        if (insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === ''))
+        {
+            setResultMessage('Please select all symbols.');
             return;
+        } 
 
         const { finalSymbols, instructions } = PuzzleSolver(insideSymbols, outsideSymbols);
 
+        // Checks to see if theres a Cube, Sphere or Tetraheron among the returned.
+        if (finalSymbols.some(symbol => symbol === undefined))
+        {
+            setResultMessage('Impossible combination set; try again.');
+            return;
+        }
+
         setInstructions(instructions);
         setFinalSymbols(finalSymbols);
+        setResultMessage('');
 
     }, [insideSymbols, outsideSymbols]);
 
@@ -75,12 +88,12 @@ export function Home()
                     </div>
                 </div>
                 <p className = 'home__text'>Solution</p>
-                {insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === '') ? (
+                {resultMessage !== '' ? (
                     <div 
                         className = 'home__results'
                         style = {{ height: '100%' }}
                     >
-                        <p>Please select all symbols.</p>
+                        <p>{resultMessage}</p>
                     </div>
                 ) : (
                     <div className = 'home__results'>

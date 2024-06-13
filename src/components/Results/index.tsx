@@ -15,7 +15,7 @@ export function Results({ finalSymbols, instructions }: IResults)
                 {finalSymbols.map((Symbol, index) => (
                     <button 
                         key = {index} 
-                        title = {Symbol.name || Symbol.displayName || ''}
+                        title = {Symbol.name}
                         disabled = {true}
                     >
                         <Symbol/>
