@@ -35,7 +35,7 @@ const compoundIcon: { [key: string]: React.FC } =
 
 interface IPuzzleSolver
 {
-    finalSymbols: React.FC[];
+    finalSymbols: React.FC[] | undefined;
     instructions: string[][];
 }
 
@@ -45,7 +45,7 @@ export function PuzzleSolver(inside: string[], outside: string[]): IPuzzleSolver
     const simpleSymbols = [...inside];
     const compoundSymbols = [...outside];
     const swaps: string[][] = [];
-
+    
     for (let i = 0; i < simpleSymbols.length; i++)
     {
         const required = requiredCompound[simpleSymbols[i]];
@@ -85,8 +85,20 @@ export function PuzzleSolver(inside: string[], outside: string[]): IPuzzleSolver
         }
     }
 
+    // Needs to sort first, as the same symbol (like Cylinder) can come as both "CS" or "SC".
+    const sortedCompound = compoundSymbols.map(str => str.split('').sort().join(''));
+    const noDupes = new Set(sortedCompound).size === compoundSymbols.length;
+    const finalSymbols = compoundSymbols.map(symbol => compoundIcon[symbol]);
+    const noUndefineds = finalSymbols.every(symbol => symbol !== undefined);
+
+    if (noDupes && noUndefineds)
+        return {
+            finalSymbols: finalSymbols, 
+            instructions: swaps
+        };
+
     return {
-        finalSymbols: compoundSymbols.map(symbol => compoundIcon[symbol]), 
+        finalSymbols: undefined,
         instructions: swaps
     };
 }

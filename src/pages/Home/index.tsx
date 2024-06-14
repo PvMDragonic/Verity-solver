@@ -24,7 +24,7 @@ export function Home()
         const { finalSymbols, instructions } = PuzzleSolver(insideSymbols, outsideSymbols);
 
         // Checks to see if theres a Cube, Sphere or Tetraheron among the returned.
-        if (finalSymbols.some(symbol => symbol === undefined))
+        if (finalSymbols === undefined)
         {
             setResultMessage('Impossible combination set; try again.');
             return;
