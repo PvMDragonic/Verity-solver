@@ -16,15 +16,19 @@ interface ISymbol
 
 export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
 {
-    function updateSymbol(clickedSymbol: string)
+    function updateSymbol(symbol: string)
     {
-        setSymbols(prev => 
-            prev.map((symbol, index) => 
-                index === pos 
-                    ? (symbol !== clickedSymbol ? clickedSymbol : '') 
-                    : (symbol === clickedSymbol ? '' : symbol)
-            )
-        );
+        setSymbols(prev => {
+            const temp = [...prev];
+            temp[pos] = symbol;
+
+            // There can be a max of 2 of the same compound symbol.
+            const occurrences: { [key: string]: number } = {};
+            return temp.map(str => {
+                occurrences[str] = (occurrences[str] || 0) + 1;
+                return occurrences[str] > 2 ? '' : str;
+            });
+        });
     }
     
     return (
