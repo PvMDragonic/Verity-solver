@@ -2,11 +2,11 @@ import Prism from "../../assets/Prism";
 import Cylinder from "../../assets/Cylinder";
 import Cone from "../../assets/Cone";
 
-const requiredCompound: { [key: string]: string } = 
+const requiredCompound: { [key: string]: string[] } = 
 {
-    C: 'ST', // A statue with a circle should have a prism (ST);
-    S: 'TC', // A statue with a square should have a cone (TC);
-    T: 'SC'  // A statue with a triangle should have a cylinder (SC).
+    C: ['ST', 'TS'], // A statue with a circle should have a prism (ST/TS);
+    S: ['TC', 'CT'], // A statue with a square should have a cone (TC/CT);
+    T: ['SC', 'CS']  // A statue with a triangle should have a cylinder (SC/CS).
 };
 
 const statuePositions: { [key: number]: string } = 
@@ -50,7 +50,7 @@ export function PuzzleSolver(inside: string[], outside: string[]): IPuzzleSolver
     {
         const required = requiredCompound[simpleSymbols[i]];
 
-        if (compoundSymbols[i] === required)
+        if (required.includes(compoundSymbols[i]))
             continue;
 
         // The inside already has one of the symbols that make the compound from the outside.
@@ -58,7 +58,7 @@ export function PuzzleSolver(inside: string[], outside: string[]): IPuzzleSolver
         const unneededSymbol = compoundSymbols[i].split('').find(char => char === simpleSymbols[i]) || compoundSymbols[i][0];
 
         // If the outside is "SC" (cylinder) and it needs "ST" (prism), then the needed symbol is "T".
-        const neededSymbol = required.replace(compoundSymbols[i].split('').find(char => required.includes(char)) || compoundSymbols[i][0], '');
+        const neededSymbol = required[0].replace(compoundSymbols[i].split('').find(char => required.includes(char)) || compoundSymbols[i][0], '');
         
         // Needs to find a statue with a symbol that both the current statue needs and isn't needed by the found statue.
         for (let j = 0; j < compoundSymbols.length; j++)
@@ -67,7 +67,7 @@ export function PuzzleSolver(inside: string[], outside: string[]): IPuzzleSolver
             if (i === j) continue;
 
             // This ignores any completed statue.
-            if (compoundSymbols[j] === requiredCompound[simpleSymbols[j]])
+            if (requiredCompound[simpleSymbols[j]].includes(compoundSymbols[j]))
                 continue;
 
             // Find the one that both inside and outside already have, just like for 'unneededSymbol'.
