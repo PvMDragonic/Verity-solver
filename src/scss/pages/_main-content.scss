@@ -41,6 +41,21 @@
         {
             padding-bottom: 0;
         }
+
+        &--lm
+        {
+            color: $color_black;
+        }
+
+        &--dm
+        {
+            color: $color_white;
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
+        }
     }
 
     &__symbols
@@ -75,6 +90,21 @@
             {
                 font-size: 1.25rem;
             }
+        }
+
+        &--lm
+        {
+            color: $color_black;
+        }
+
+        &--dm
+        {
+            color: $color_white;
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
         }
     }
 }

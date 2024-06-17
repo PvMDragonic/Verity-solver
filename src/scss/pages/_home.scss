@@ -9,6 +9,21 @@
     justify-content: center;
     flex-direction: column;
 
+    &--lm
+    {
+        background-color: $color_white;
+    }
+
+    &--dm
+    {
+        background-color: $color_dark_blue;
+    }
+
+    &--hcm
+    {
+        background-color: $color_dark_violet;
+    }
+
     &__container
     {
         width: 50%;
@@ -16,9 +31,6 @@
         min-height: 70%;
         display: flex;
         flex-direction: column;
-        background-color: $color_light_gray;
-        box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem $color_gray;
-        border: 0.1rem solid $color_gray;
         border-radius: 1rem;
         padding: 1rem;
 
@@ -32,6 +44,27 @@
         {
             min-width: 14rem;
         }
+
+        &--lm
+        {
+            background-color: $color_light_gray;
+            box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem $color_gray;
+            border: 0.1rem solid $color_gray;
+        }
+
+        &--dm
+        {
+            background-color: $color_medium_dark_blue;
+            box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem $color_medium_dark_blue;
+            border: 0.1rem solid $color_very_dark_blue;
+        }
+
+        &--hcm
+        {
+            background-color: $color_dark_violet;
+            box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem $color_medium_dark_violet;
+            border: 0.1rem solid $color_medium_dark_violet;
+        }
     }
 
     &__credits
@@ -40,6 +73,21 @@
         font-style: italic;
         font-size: 0.8rem;
         padding-top: 0.25rem;
+
+        &--lm
+        {
+            color: $color_black;
+        }
+
+        &--dm
+        {
+            color: $color_white;
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
+        }
     }
 
     &__options-button
@@ -84,6 +132,30 @@
             to 
             {
                 transform: rotate(360deg);
+            }
+        }
+
+        &--lm
+        {
+            & svg
+            {
+                fill: $color_black;
+            }
+        }
+
+        &--dm
+        {
+            & svg
+            {
+                fill: $color_white;
+            }
+        }
+
+        &--hcm
+        {
+            & svg
+            {
+                fill: $color_yellow;
             }
         }
     }

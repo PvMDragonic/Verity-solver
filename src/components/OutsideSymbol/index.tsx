@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Cone from "../../assets/Cone";
 import Prism from "../../assets/Prism";
 import Cylinder from "../../assets/Cylinder";
@@ -6,6 +6,7 @@ import Cube from "../../assets/Cube";
 import Tetrahedron from "../../assets/Tetrahedron";
 import Sphere from "../../assets/Sphere";
 import { useTranslation } from "react-i18next";
+import ColorModeContext from "../../pages/Home/modeSelector";
 
 interface ISymbol
 {
@@ -17,6 +18,7 @@ interface ISymbol
 
 export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
 {
+    const { colorMode } = useContext(ColorModeContext);
     const { t } = useTranslation();
 
     function updateSymbol(symbol: string)
@@ -35,13 +37,15 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
     }
     
     return (
-        <div className = 'symbols'>
-            <p className = 'symbols__text'>{label}</p>
+        <div className = {`symbols symbols--${colorMode}`}>
+            <p className = {`symbols__text symbols__text--${colorMode}`}>
+                {label}
+            </p>
             <div className = 'symbols__container'>
                 <button 
                     title = {t('Cone')}
                     style = {{ opacity: symbols[pos] !== 'TC' ? '50%' : '100%'}}
-                    className = 'symbols__button'
+                    className = {`symbols__button symbols__button--${colorMode}`}
                     onClick = {() => updateSymbol('TC')}
                 >
                     <Cone/>
@@ -49,7 +53,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                 <button 
                     title = {t('Prism')}
                     style = {{ opacity: symbols[pos] !== 'TS' ? '50%' : '100%'}}
-                    className = 'symbols__button'
+                    className = {`symbols__button symbols__button--${colorMode}`}
                     onClick = {() => updateSymbol('TS')}
                 >
                     <Prism/>
@@ -57,7 +61,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                 <button 
                     title = {t('Cylinder')}
                     style = {{ opacity: symbols[pos] !== 'SC' ? '50%' : '100%'}}
-                    className = 'symbols__button'
+                    className = {`symbols__button symbols__button--${colorMode}`}
                     onClick = {() => updateSymbol('SC')}
                 >
                     <Cylinder/>
@@ -67,7 +71,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                 <button 
                     title = {t('Cube')}
                     style = {{ opacity: symbols[pos] !== 'SS' ? '50%' : '100%'}}
-                    className = 'symbols__button'
+                    className = {`symbols__button symbols__button--${colorMode}`}
                     onClick = {() => updateSymbol('SS')}
                 >
                     <Cube/>
@@ -75,7 +79,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                 <button 
                     title = {t('Tetrahedron')}
                     style = {{ opacity: symbols[pos] !== 'TT' ? '50%' : '100%'}}
-                    className = 'symbols__button'
+                    className = {`symbols__button symbols__button--${colorMode}`}
                     onClick = {() => updateSymbol('TT')}
                 >
                     <Tetrahedron/>
@@ -83,7 +87,7 @@ export function OutsideSymbol({ pos, label, symbols, setSymbols }: ISymbol)
                 <button
                     title = {t('Sphere')} 
                     style = {{ opacity: symbols[pos] !== 'CC' ? '50%' : '100%'}}
-                    className = 'symbols__button'
+                    className = {`symbols__button symbols__button--${colorMode}`}
                     onClick = {() => updateSymbol('CC')}
                 >
                     <Sphere/>

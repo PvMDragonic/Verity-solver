@@ -21,5 +21,9 @@
     "Credits": "Erstellt von Dragonic#2329 — Projekt ansehen auf",
     "SelectMessage": "Bitte wählen Sie alle Symbole aus.",
     "ImpossibleMessage": "Unmögliche Kombination; versuche es nochmal.",
-    "Language": "Sprache"
+    "Language": "Sprache",
+    "Colors": "Farbschema",
+    "Light": "Hell",
+    "Dark": "Dunkel",
+    "High-contrast": "Hochkontrast"
 }

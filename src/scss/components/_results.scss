@@ -17,20 +17,57 @@
         gap: 0.5rem;
     }
 
-    & button
+    &__button
     {
         width: 2.25rem;
         height: 2.25rem;
         padding: 0.175rem;
         border-radius: 0.5rem;
         
-        &:disabled
+        &--lm
         {
-            background-color: $color_white;
-            border-top-color: $color_gray;
-            border-left-color: $color_gray;
-            border-right-color: $color_black;
-            border-bottom-color: $color_black;
+            &:disabled
+            {
+                background-color: $color_white;
+                border-top-color: $color_gray;
+                border-left-color: $color_gray;
+                border-right-color: $color_black;
+                border-bottom-color: $color_black;
+            }
+        }
+
+        &--dm
+        {
+            &:disabled
+            {
+                background-color: $color_medium_dark_blue;
+                border-top-color: $color_light_dark_blue;
+                border-left-color: $color_light_dark_blue;
+                border-bottom-color: $color_very_dark_blue;
+                border-right-color: $color_very_dark_blue;
+
+                & svg
+                {
+                    fill: $color_white;
+                }
+            }
+        }
+
+        &--hcm
+        {
+            &:disabled
+            {
+                background-color: $color_medium_dark_violet;
+                border-top-color: $color_light_yellow;
+                border-left-color: $color_light_yellow;
+                border-bottom-color: $color_light_yellow;
+                border-right-color: $color_light_yellow;
+
+                & svg
+                {
+                    fill: $color_light_yellow;
+                }
+            }
         }
     }
 
@@ -45,6 +82,21 @@
         @media (max-width: 375px) 
         {
             font-size: 1.25rem;
+        }
+
+        &--lm
+        {
+            color: $color_black;
+        }
+
+        &--dm
+        {
+            color: $color_white;
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
         }
     }
 }

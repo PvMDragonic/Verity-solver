@@ -1,6 +1,19 @@
+// Light mode
 $color_gray: rgb(125, 125, 125);
 $color_medium_gray: rgb(182, 171, 171);
 $color_light_gray: rgb(211, 211, 211);
-
 $color_white: rgb(255, 255, 255);
 $color_black: rgb(0, 0, 0);
+
+// Dark mode
+$color_dark_blue: hsl(221, 30%, 27%);
+$color_light_dark_blue: hsl(221, 28%, 37%);
+$color_medium_dark_blue: hsl(223, 31%, 20%);
+$color_very_dark_blue: hsl(224, 36%, 15%);
+
+// High-contrast mode
+$color_dark_violet: hsl(269, 70%, 18%);
+$color_medium_dark_violet: hsl(268, 74%, 13%);
+$color_very_dark_violet: hsl(268, 74%, 14%);
+$color_light_yellow: hsl(52, 100%, 62%);
+$color_yellow: hsl(52, 100%, 50%);

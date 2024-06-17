@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { InsideSymbol } from "../../components/InsideSymbol";
 import { OutsideSymbol } from "../../components/OutsideSymbol";
 import { PuzzleSolver } from "./solver";
 import { Results } from "../../components/Results";
+import ColorModeContext from "./modeSelector";
 import '../../scss/main.scss';
 
 export function MainContent()
@@ -13,6 +14,7 @@ export function MainContent()
     const [instructions, setInstructions] = useState<string[][]>([]);
     const [finalSymbols, setFinalSymbols] = useState<React.FC[]>([]);
     const [resultMessage, setResultMessage] = useState<string>('');
+    const { colorMode } = useContext(ColorModeContext);
     const { t } = useTranslation();
     
     useEffect(() => 
@@ -42,7 +44,9 @@ export function MainContent()
         <>
             <div className = 'main-content'>
                 <div className = 'main-content__container'>
-                    <p className = 'main-content__text'>{t('Inside')}</p>
+                    <p className = {`main-content__text main-content__text--${colorMode}`}>
+                        {t('Inside')}
+                    </p>
                     <div className = 'main-content__symbols'>
                         <InsideSymbol
                             pos = {0}
@@ -65,7 +69,9 @@ export function MainContent()
                     </div>
                 </div>
                 <div className = 'main-content__container'>
-                    <p className = 'main-content__text'>{t('Outside')}</p>
+                    <p className = {`main-content__text main-content__text--${colorMode}`}>
+                        {t('Outside')}
+                    </p>
                     <div className = 'main-content__symbols'>
                         <OutsideSymbol
                             pos = {0}
@@ -88,16 +94,18 @@ export function MainContent()
                     </div>
                 </div>
             </div>
-            <p className = 'main-content__text'>{t('Solution')}</p>
+            <p className = {`main-content__text main-content__text--${colorMode}`}>
+                {t('Solution')}
+            </p>
             {resultMessage !== '' ? (
                 <div 
-                    className = 'main-content__results'
+                    className = {`main-content__results main-content__results--${colorMode}`}
                     style = {{ height: '100%' }}
                 >
                     <p>{resultMessage}</p>
                 </div>
             ) : (
-                <div className = 'main-content__results'>
+                <div className = {`main-content__results main-content__results--${colorMode}`}>
                     <Results
                         finalSymbols = {finalSymbols}
                         instructions = {instructions}

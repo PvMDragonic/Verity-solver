@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import ColorModeContext from "../../pages/Home/modeSelector";
 import '../../scss/main.scss';
 
 interface IResults
@@ -10,6 +11,7 @@ interface IResults
 
 export function Results({ finalSymbols, instructions }: IResults)
 {
+    const { colorMode } = useContext(ColorModeContext);
     const { t } = useTranslation();
 
     return (
@@ -19,6 +21,7 @@ export function Results({ finalSymbols, instructions }: IResults)
                     <button 
                         key = {index} 
                         title = {t(Symbol.name)}
+                        className = {`results__button results__button--${colorMode}`}
                         disabled = {true}
                     >
                         <Symbol/>

@@ -4,8 +4,10 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 4rem;
 
     &__container
     {
@@ -31,27 +33,95 @@
         text-align: center;
         padding-bottom: 1rem;
         margin: 0;
+
+        &--lm
+        {
+            color: $color_black;
+        }
+
+        &--dm
+        {
+            color: $color_white;
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
+        }
     }
 
-    &__language-button
+    &__button
     {
         width: 6rem;
         height: 2rem;
         border-radius: 0.5rem;
-        transition: 0.2s;
+        transition: background-color 0.2s;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-
-        &:hover
-        {
-            background-color: $color_light_gray;
-        }
         
         @media (max-width: 550px) 
         {
             width: 2rem;
+        }
+
+        &--lm
+        {
+            &:hover
+            {
+                background-color: $color_light_gray;
+            }
+        }
+
+        &--dm
+        {
+            color: $color_white;
+            background-color: $color_medium_dark_blue;
+            border-top-color: $color_light_dark_blue;
+            border-left-color: $color_light_dark_blue;
+            border-bottom-color: $color_very_dark_blue;
+            border-right-color: $color_very_dark_blue;
+
+            &:hover
+            {
+                background-color: $color_very_dark_blue;
+            }
+
+            & svg
+            {
+                fill: $color_white;
+
+                & g
+                {
+                    stroke: $color_white;
+                }
+            }
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
+            background-color: $color_medium_dark_violet;
+            border-top-color: $color_light_yellow;
+            border-left-color: $color_light_yellow;
+            border-bottom-color: $color_light_yellow;
+            border-right-color: $color_light_yellow;
+
+            &:hover
+            {
+                background-color: $color_dark_violet;
+            }
+
+            & svg
+            {
+                fill: $color_light_yellow;
+
+                & g
+                {
+                    stroke: $color_light_yellow;
+                }
+            }
         }
     }
 }

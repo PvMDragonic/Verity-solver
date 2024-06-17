@@ -7,10 +7,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: $color_medium_gray;
     border-radius: 1rem;
     padding: 0.75rem;
     gap: 0.75rem;
+
+    &--lm
+    {
+        background-color: $color_medium_gray;
+    }
+
+    &--dm
+    {
+        background-color: $color_very_dark_blue;
+    }
+
+    &--hcm
+    {
+        background-color: $color_very_dark_violet;
+    }
 
     @media (max-width: 550px) 
     {
@@ -52,6 +66,21 @@
         {
             padding-bottom: 0.25rem;
         }
+
+        &--lm
+        {
+            color: $color_black;
+        }
+
+        &--dm
+        {
+            color: $color_white;
+        }
+
+        &--hcm
+        {
+            color: $color_light_yellow;
+        }
     }
 
     &__button
@@ -63,15 +92,53 @@
         transition: 0.2s;
         cursor: pointer;
 
+        &:hover
+        {
+            opacity: 80% !important;
+        }
+
         @media (max-width: 375px) 
         {
             width: 1.75rem;
             height: 1.75rem;
         }
 
-        &:hover
+        &--dm
         {
-            opacity: 85% !important;
+            background-color: $color_medium_dark_blue;
+            border-top-color: $color_light_dark_blue;
+            border-left-color: $color_light_dark_blue;
+            border-bottom-color: $color_very_dark_blue;
+            border-right-color: $color_very_dark_blue;
+
+            &:hover
+            {
+                background-color: $color_very_dark_blue;
+            }
+
+            & svg
+            {
+                fill: $color_white;
+            }
+        }
+
+        &--hcm
+        {
+            background-color: $color_medium_dark_violet;
+            border-top-color: $color_light_yellow;
+            border-left-color: $color_light_yellow;
+            border-bottom-color: $color_light_yellow;
+            border-right-color: $color_light_yellow;
+
+            &:hover
+            {
+                background-color: $color_dark_violet;
+            }
+
+            & svg
+            {
+                fill: $color_light_yellow;
+            }
         }
     }
 }
