@@ -16,7 +16,8 @@ i18n
         'en-US': ['en'],
         'en-GB': ['en'],
         'es-ES': ['es'], 
-        'es-MX': ['es'],  
+        'es-MX': ['es'],
+        'de-DE': ['de'],  
         'default': ['en']
     },
     interpolation: 
