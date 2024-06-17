@@ -48,5 +48,10 @@
         {
             background-color: $color_light_gray;
         }
+        
+        @media (max-width: 550px) 
+        {
+            width: 2rem;
+        }
     }
 }
