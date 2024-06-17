@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/Verity-solver/static/css/main.bc358c45.css",
-    "main.js": "/Verity-solver/static/js/main.5ee961af.js",
+    "main.css": "/Verity-solver/static/css/main.79cd8ab4.css",
+    "main.js": "/Verity-solver/static/js/main.f0831231.js",
     "index.html": "/Verity-solver/index.html",
-    "main.bc358c45.css.map": "/Verity-solver/static/css/main.bc358c45.css.map",
-    "main.5ee961af.js.map": "/Verity-solver/static/js/main.5ee961af.js.map"
+    "static/media/getFetch.cjs": "/Verity-solver/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
+    "main.79cd8ab4.css.map": "/Verity-solver/static/css/main.79cd8ab4.css.map",
+    "main.f0831231.js.map": "/Verity-solver/static/js/main.f0831231.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc358c45.css",
-    "static/js/main.5ee961af.js"
+    "static/css/main.79cd8ab4.css",
+    "static/js/main.f0831231.js"
   ]
 }
