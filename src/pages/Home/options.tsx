@@ -33,6 +33,12 @@ export function Options()
                     >
                         {mobile ? 'PT' : 'Português'}
                     </button>
+                    <button 
+                        className = 'options__language-button'
+                        onClick = {() => i18n.changeLanguage('es')}
+                    >
+                        {mobile ? 'ES' : 'Español'}
+                    </button>
                 </div>
             </div>
         </div>
