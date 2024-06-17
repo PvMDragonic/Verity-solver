@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { MainContent } from "./mainContent";
 import { Options } from "./options";
 import Gear from "../../assets/Gear";
@@ -7,6 +8,7 @@ import '../../scss/main.scss';
 export function Home()
 {
     const [showOptions, setShowOptions] = useState<boolean>(false);
+    const { t } = useTranslation();
 
     return (
         <div className = 'home'>
@@ -25,7 +27,9 @@ export function Home()
                     <Options/>
                 )}
             </section>
-            <p className = 'home__credits'>Made by Dragonic#2329 — View project on <a href='https://github.com/PvMDragonic/Verity-solver'>Github</a>.</p>
+            <p className = 'home__credits'>
+                {t('Credits')} <a href='https://github.com/PvMDragonic/Verity-solver'>Github</a>.
+            </p>
         </div>
     )
 }

@@ -1,0 +1,80 @@
+.main-content
+{
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // Keeps 'Solution' text in place,
+    // because '&:not(:first-of-type)'
+    // is not affectting it anymore.
+    padding-bottom: 1rem;
+
+    @media (max-width: 550px) 
+    {
+        flex-direction: row;
+    }
+
+    &__container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text
+    {
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 1rem;
+        margin: 0;
+
+        &:not(:first-of-type) 
+        {
+            padding-top: 1rem;
+        }
+
+        // Removes padding from 'Solution'.
+        &:last-of-type
+        {
+            padding-bottom: 0;
+        }
+    }
+
+    &__symbols
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        @media (max-width: 550px) 
+        {
+            flex-direction: column;
+        }
+    }
+
+    &__results
+    {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & p
+        {
+            font-size: 1.5rem;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 0.25rem;
+            margin: 0;
+
+            @media (max-width: 375px) 
+            {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

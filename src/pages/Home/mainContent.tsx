@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { InsideSymbol } from "../../components/InsideSymbol";
 import { OutsideSymbol } from "../../components/OutsideSymbol";
 import { PuzzleSolver } from "./solver";
@@ -12,12 +13,13 @@ export function MainContent()
     const [instructions, setInstructions] = useState<string[][]>([]);
     const [finalSymbols, setFinalSymbols] = useState<React.FC[]>([]);
     const [resultMessage, setResultMessage] = useState<string>('');
+    const { t } = useTranslation();
     
     useEffect(() => 
     {
         if (insideSymbols.some(str => str === '') || outsideSymbols.some(str => str === ''))
         {
-            setResultMessage('Please select all symbols.');
+            setResultMessage(t('SelectMessage'));
             return;
         } 
 
@@ -26,7 +28,7 @@ export function MainContent()
         // Checks to see if theres a Cube, Sphere or Tetraheron among the returned.
         if (finalSymbols === undefined)
         {
-            setResultMessage('Impossible combination set; try again.');
+            setResultMessage(t('ImpossibleMessage'));
             return;
         }
 
@@ -38,64 +40,64 @@ export function MainContent()
 
     return (
         <>
-            <div className = 'home__subcontainer'>
-                <div className = 'home__symbols-container'>
-                    <p className = 'home__text'>Inside</p>
-                    <div className = 'home__symbols'>
+            <div className = 'main-content'>
+                <div className = 'main-content__container'>
+                    <p className = 'main-content__text'>{t('Inside')}</p>
+                    <div className = 'main-content__symbols'>
                         <InsideSymbol
                             pos = {0}
-                            label = {'Left'}
+                            label = {t('Left')}
                             symbols = {insideSymbols}
                             setSymbols = {setInsideSymbols}
                         />
                         <InsideSymbol
                             pos = {1}
-                            label = {'Middle'}
+                            label = {t('Middle')}
                             symbols = {insideSymbols}
                             setSymbols = {setInsideSymbols}
                         />
                         <InsideSymbol
                             pos = {2}
-                            label = {'Right'}
+                            label = {t('Right')}
                             symbols = {insideSymbols}
                             setSymbols = {setInsideSymbols}
                         />
                     </div>
                 </div>
-                <div className = 'home__symbols-container'>
-                    <p className = 'home__text'>Outside</p>
-                    <div className = 'home__symbols'>
+                <div className = 'main-content__container'>
+                    <p className = 'main-content__text'>{t('Outside')}</p>
+                    <div className = 'main-content__symbols'>
                         <OutsideSymbol
                             pos = {0}
-                            label = {'Left'}
+                            label = {t('Left')}
                             symbols = {outsideSymbols}
                             setSymbols = {setOutsideSymbols}
                         />
                         <OutsideSymbol
                             pos = {1}
-                            label = {'Middle'}
+                            label = {t('Middle')}
                             symbols = {outsideSymbols}
                             setSymbols = {setOutsideSymbols}
                         />
                         <OutsideSymbol
                             pos = {2}
-                            label = {'Right'}
+                            label = {t('Right')}
                             symbols = {outsideSymbols}
                             setSymbols = {setOutsideSymbols}
                         />
                     </div>
                 </div>
             </div>
-            <p className = 'home__text'>Solution</p>
+            <p className = 'main-content__text'>{t('Solution')}</p>
             {resultMessage !== '' ? (
                 <div 
-                    className = 'home__results'
+                    className = 'main-content__results'
                     style = {{ height: '100%' }}
                 >
                     <p>{resultMessage}</p>
                 </div>
             ) : (
-                <div className = 'home__results'>
+                <div className = 'main-content__results'>
                     <Results
                         finalSymbols = {finalSymbols}
                         instructions = {instructions}
