@@ -53,7 +53,7 @@ export function Options()
                 </div>
             </div>
             <div className = 'options__container'>
-                <p className = {`options__text options__text--${colorMode}`}>{t('Color scheme')}</p>
+                <p className = {`options__text options__text--${colorMode}`}>{t('Colors')}</p>
                 <div>
                     <button 
                         className = {`options__button options__button--${colorMode}`}
