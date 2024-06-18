@@ -18,7 +18,7 @@
     "Tetrahedron": "Tetrahedron",
     "Sphere": "Sphere",
     "Dissect": "Dissect <1>{{symbol}}</1> on <2>{{position}}</2>.",
-    "Credits": "Made by Dragonic#2329 — View project on",
+    "Credits": "Made by Dragonic#2329 — View project on <1>{{link}}</1>.",
     "SelectMessage": "Please select all symbols.",
     "ImpossibleMessage": "Impossible combination set; try again.",
     "Language": "Language",

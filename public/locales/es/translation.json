@@ -18,7 +18,7 @@
     "Tetrahedron": "Tetraedro",
     "Sphere": "Esfera",
     "Dissect": "Disecar <1>{{symbol}}</1> en <2>{{position}}</2>.",
-    "Credits": "Hecho por Dragonic#2329 — Ver proyecto en",
+    "Credits": "Hecho por Dragonic#2329 — Ver proyecto en <1>{{link}}</1>.",
     "SelectMessage": "Por favor seleccione todos los símbolos.",
     "ImpossibleMessage": "Combinación imposible; inténtelo de nuevo.",
     "Language": "Idioma",

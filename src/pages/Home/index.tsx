@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { MainContent } from "./mainContent";
 import { Options } from "./options";
 import ColorModeContext from "./modeSelector";
@@ -10,7 +10,7 @@ export function Home()
 {
     const [showOptions, setShowOptions] = useState<boolean>(false);
     const { colorMode } = useContext(ColorModeContext);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <div className = {`home home--${colorMode}`}>
@@ -30,7 +30,11 @@ export function Home()
                 )}
             </section>
             <p className = {`home__credits home__credits--${colorMode}`}>
-                {t('Credits')} <a href='https://github.com/PvMDragonic/Verity-solver'>Github</a>.
+                <Trans 
+                    i18nKey = "Credits" 
+                    values = {{ link: 'Github' }}
+                    components = {{ 1: <a href='https://github.com/PvMDragonic/Verity-solver'/> }} 
+                />
             </p>
         </div>
     )

@@ -15,8 +15,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 0.5rem;
 
-        & > div:first-of-type
+        & > div
         {
             display: flex;
             justify-content: center;
@@ -65,6 +66,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        line-height: 1;
+        word-break: keep-all;
         
         @media (max-width: 550px) 
         {

@@ -62,6 +62,32 @@ export function Options()
                         {mobile ? 'DE' : 'Deutsch'}
                     </button>
                 </div>
+                <div>
+                    <button 
+                        className = {`options__button options__button--${activeLanguageBtn('ru')}`}
+                        onClick = {() => i18n.changeLanguage('ru')}
+                    >
+                        {mobile ? 'RU' : 'Русский'}
+                    </button>
+                    <button 
+                        className = {`options__button options__button--${activeLanguageBtn('kr')}`}
+                        onClick = {() => i18n.changeLanguage('kr')}
+                    >
+                        {mobile ? 'KR' : '한국어'}
+                    </button>
+                    <button 
+                        className = {`options__button options__button--${activeLanguageBtn('jp')}`}
+                        onClick = {() => i18n.changeLanguage('jp')}
+                    >
+                        {mobile ? 'JP' : '日本語'}
+                    </button>
+                    <button 
+                        className = {`options__button options__button--${activeLanguageBtn('zh')}`}
+                        onClick = {() => i18n.changeLanguage('zh')}
+                    >
+                        {mobile ? 'ZH' : '中文'}
+                    </button>
+                </div>
             </div>
             <div className = 'options__container'>
                 <p className = {`options__text options__text--${colorMode}`}>{t('Colors')}</p>

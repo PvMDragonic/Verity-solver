@@ -18,7 +18,7 @@
     "Tetrahedron": "Tetraeder",
     "Sphere": "Kugel",
     "Dissect": "Seziere <1>{{symbol}}</1> auf <2>{{position}}</2>.",
-    "Credits": "Erstellt von Dragonic#2329 — Projekt ansehen auf",
+    "Credits": "Erstellt von Dragonic#2329 — Projekt ansehen auf <1>{{link}}</1>.",
     "SelectMessage": "Bitte wählen Sie alle Symbole aus.",
     "ImpossibleMessage": "Unmögliche Kombination; versuche es nochmal.",
     "Language": "Sprache",
