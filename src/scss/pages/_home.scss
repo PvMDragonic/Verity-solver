@@ -82,11 +82,21 @@
         &--dm
         {
             color: $color_white;
+
+            & a
+            {
+                color: $color_medium_gray;
+            }
         }
 
         &--hcm
         {
             color: $color_light_yellow;
+
+            & a
+            {
+                color: $color_orange;
+            }
         }
     }
 
