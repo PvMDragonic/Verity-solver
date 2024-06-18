@@ -21,31 +21,41 @@ export function Options()
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    function activeLanguageBtn(lang: string)
+    {
+        return lang === i18n.language ? `active-${colorMode}` : colorMode;
+    }
+
+    function activeColorModeBtn(mode: string)
+    {
+        return mode === colorMode ? `active-${colorMode}` : colorMode;
+    }
+
     return (
         <div className = 'options'>
             <div className = 'options__container'>
                 <p className = {`options__text options__text--${colorMode}`}>{t('Language')}</p>
                 <div>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeLanguageBtn('en')}`}
                         onClick = {() => i18n.changeLanguage('en')}
                     >
                         {mobile ? 'EN' : 'English'}
                     </button>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeLanguageBtn('pt')}`}
                         onClick = {() => i18n.changeLanguage('pt')}
                     >
                         {mobile ? 'PT' : 'Português'}
                     </button>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeLanguageBtn('es')}`}
                         onClick = {() => i18n.changeLanguage('es')}
                     >
                         {mobile ? 'ES' : 'Español'}
                     </button>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeLanguageBtn('de')}`}
                         onClick = {() => i18n.changeLanguage('de')}
                     >
                         {mobile ? 'DE' : 'Deutsch'}
@@ -56,19 +66,19 @@ export function Options()
                 <p className = {`options__text options__text--${colorMode}`}>{t('Colors')}</p>
                 <div>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeColorModeBtn('lm')}`}
                         onClick = {() => setColorMode('lm')}
                     >
                         {mobile ? <LightMode/> : t('Light')}
                     </button>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeColorModeBtn('dm')}`}
                         onClick = {() => setColorMode('dm')}
                     >
                         {mobile ? <DarkMode/> : t('Dark')}
                     </button>
                     <button 
-                        className = {`options__button options__button--${colorMode}`}
+                        className = {`options__button options__button--${activeColorModeBtn('hcm')}`}
                         onClick = {() => setColorMode('hcm')}
                     >
                         {mobile ? <HighContrastMode/> : t('High-contrast')}
