@@ -56,6 +56,11 @@
         {
             color: $color_light_yellow;
         }
+
+        &--am
+        {
+            color: $color_white;
+        }
     }
 
     &__symbols
@@ -105,6 +110,11 @@
         &--hcm
         {
             color: $color_light_yellow;
+        }
+
+        &--am
+        {
+            color: $color_white;
         }
     }
 }

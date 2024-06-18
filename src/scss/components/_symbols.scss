@@ -26,6 +26,11 @@
         background-color: $color_very_dark_violet;
     }
 
+    &--am
+    {
+        border: 0.1rem solid $color_white;
+    }
+
     @media (max-width: 550px) 
     {
         min-height: 7rem;
@@ -80,6 +85,11 @@
         &--hcm
         {
             color: $color_light_yellow;
+        }
+
+        &--am
+        {
+            color: $color_white;
         }
     }
 
@@ -138,6 +148,31 @@
             & svg
             {
                 fill: $color_light_yellow;
+            }
+        }
+
+        &--am
+        {
+            background-color: $color_black;
+            border-top-color: $color_medium_gray;
+            border-left-color: $color_medium_gray;
+            border-bottom-color: $color_white;
+            border-right-color: $color_white;
+
+            &:active
+            {
+                background-color: $color_light_gray;
+
+                & svg
+                {
+                    fill: $color_black !important;
+                }
+                
+            }
+
+            & svg
+            {
+                fill: $color_white;
             }
         }
     }

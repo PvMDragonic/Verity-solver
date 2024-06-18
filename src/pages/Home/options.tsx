@@ -4,6 +4,7 @@ import LightMode from "../../assets/LightMode";
 import DarkMode from "../../assets/DarkMode";
 import HighContrastMode from "../../assets/HighContrastMode";
 import ColorModeContext from "./modeSelector";
+import AmoledMode from "../../assets/AmoledMode";
 
 export function Options()
 {
@@ -82,6 +83,12 @@ export function Options()
                         onClick = {() => setColorMode('hcm')}
                     >
                         {mobile ? <HighContrastMode/> : t('High-contrast')}
+                    </button>
+                    <button 
+                        className = {`options__button options__button--${activeColorModeBtn('am')}`}
+                        onClick = {() => setColorMode('am')}
+                    >
+                        {mobile ? <AmoledMode/> : t('Amoled')}
                     </button>
                 </div>
             </div>

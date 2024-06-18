@@ -24,6 +24,11 @@
         background-color: $color_dark_violet;
     }
 
+    &--am
+    {
+        background-color: $color_black;
+    }
+
     &__container
     {
         width: 50%;
@@ -65,6 +70,13 @@
             box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem $color_medium_dark_violet;
             border: 0.1rem solid $color_medium_dark_violet;
         }
+
+        &--am
+        {
+            background-color: $color_black;
+            box-shadow: 0.75rem 0.75rem 0.75rem 0.1rem;
+            border: 0.1rem solid $color_white;
+        }
     }
 
     &__credits
@@ -96,6 +108,16 @@
             & a
             {
                 color: $color_orange;
+            }
+        }
+
+        &--am
+        {
+            color: $color_white;
+
+            & a
+            {
+                color: $color_medium_gray;
             }
         }
     }
@@ -166,6 +188,14 @@
             & svg
             {
                 fill: $color_light_yellow;
+            }
+        }
+
+        &--am
+        {
+            & svg
+            {
+                fill: $color_white;
             }
         }
     }
