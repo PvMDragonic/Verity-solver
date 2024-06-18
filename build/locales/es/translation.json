@@ -18,12 +18,13 @@
     "Tetrahedron": "Tetraedro",
     "Sphere": "Esfera",
     "Dissect": "Disecar <1>{{symbol}}</1> en <2>{{position}}</2>.",
-    "Credits": "Hecho por Dragonic#2329 — Ver proyecto en",
+    "Credits": "Hecho por Dragonic#2329 — Ver proyecto en <1>{{link}}</1>.",
     "SelectMessage": "Por favor seleccione todos los símbolos.",
     "ImpossibleMessage": "Combinación imposible; inténtelo de nuevo.",
     "Language": "Idioma",
     "Colors": "Esquema de colores",
     "Light": "Claro",
     "Dark": "Oscuro",
-    "High-contrast": "Alto contraste"
+    "High-contrast": "Alto contraste",
+    "Amoled": "Pantalla AMOLED"
 }
