@@ -81,10 +81,12 @@
 
     &__credits
     {
+        width: 100%;
+        padding-top: 0.25rem;
+        font-size: 0.8rem;
         font-family: Arial;
         font-style: italic;
-        font-size: 0.8rem;
-        padding-top: 0.25rem;
+        text-align: center;
 
         &--lm
         {
